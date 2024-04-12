@@ -1,5 +1,5 @@
-pipeine {
-agent any
+pipeline {
+    agent any
 
     stages {
         stage('Checkout') {
@@ -10,6 +10,7 @@ agent any
 
         stage('Build') {
             steps {
+                sh 'mvn --version'
                 sh 'mvn clean package'
             }
         }
@@ -22,9 +23,10 @@ agent any
 
         stage('Deploy') {
             steps {
-                sh 'rsync  /var/lib/jenkins/workspace/tomcat/target/*.war ubuntu@52.66.210.6:/opt/apache-tomcat-9.0.87/webapps/'
+                sh 'rsync  /var/lib/jenkins/workspace/tomcat/target/*.war ubuntu@52.66.210.6:/opt/tomcat/webapps/'
       
             }
         }
 
     }
+}
