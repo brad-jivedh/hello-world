@@ -4,13 +4,12 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'master', url: 'https://github.com/brad-jivedh/hello-world.git'
+                echo 'mvn --version'
             }
         }
 
         stage('Build') {
             steps {
-                sh 'mvn --version'
                 sh 'mvn clean package'
             }
         }
