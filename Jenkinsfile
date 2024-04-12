@@ -4,7 +4,7 @@ agent any
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'master', credentialsId: 'github', url: 'https://github.com/brad-jivedh/hello-world.git'
+                git branch: 'master', url: 'https://github.com/brad-jivedh/hello-world.git'
             }
         }
 
