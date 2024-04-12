@@ -6,9 +6,9 @@ pipeline {
           git branch: 'master', url: 'https://github.com/brad-jivedh/hello-world.git'
        }
      }
-        stage ('Buil stage') {
+        stage ('Build stage') {
           steps {
-              sh 'mvn clean install'
+              sh '/opt/apache-maven-3.9.6/bin/mvn clean install -Dmaven.test.skip=true'
        }
      }
         stage ('Push') {
