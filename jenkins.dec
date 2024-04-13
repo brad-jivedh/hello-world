@@ -18,7 +18,7 @@ pipeline {
       }
       stage('Deploying stage') {
           steps {
-              sh 'sudo cp /var/lib/jenkins/workspace/Que_4A/target/*.war /opt/apache-tomcat-9.0.87/webapps/' 
+              sh 'sudo mv /var/lib/jenkins/workspace/Que_4A/target/*.war /opt/apache-tomcat-9.0.87/webapps/' 
       }
       }
   }
