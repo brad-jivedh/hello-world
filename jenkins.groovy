@@ -1,5 +1,5 @@
 node {
-    
+    agent {lable 'master'}
     stage('Checkout') {
          git branch: 'master', url: 'https://github.com/brad-jivedh/hello-world.git'
     }
