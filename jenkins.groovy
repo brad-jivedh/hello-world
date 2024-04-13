@@ -1,7 +1,7 @@
 node {
     
     stage('Checkout') {
-        sh 'mvn --version'
+         git branch: 'master', url: 'https://github.com/brad-jivedh/hello-world.git'
     }
 
     stage('Build') {
