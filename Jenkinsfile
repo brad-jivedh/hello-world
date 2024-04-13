@@ -22,7 +22,7 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                sh 'rsync  /var/lib/jenkins/workspace/tomcat/target/*.war ubuntu@52.66.210.6:/opt/tomcat/webapps/'
+                sh 'rsync  /var/lib/jenkins/workspace/tomcat/target/*.war ubuntu@13.234.33.170:/opt/apache-maven-3.9.6/webapps/'
       
             }
         }
