@@ -1,0 +1,31 @@
+pipeline {
+ agent any
+  stages {
+      stage('checkout stage') {
+          steps {
+              git branch: mast
+          }
+      }
+      stage('Testing stage') {
+          steps {
+              sh 'mvn test'
+          }
+      }
+      stage('Building stage') {
+          steps {
+              sh 'mvn clean install'
+          }
+      }
+      stage('Building stage') {
+          steps {
+              sh 'mvn clean install'
+          }
+      }
+      stage('Deploying stage') {
+          steps {
+              sh 'cp /var/lib/jenkins/workspace/Que_4A/target/*.war /opt/apache-tomcat-9.0.87/webapps/''
+'
+          }
+      }
+  }
+ }
