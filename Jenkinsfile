@@ -22,7 +22,7 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                sh 'rsync -r /var/lib/jenkins/workspace/Que_3/target/*.war ubuntu@13.234.33.170:/opt/apache-tomcat-9.0.87/webapps/'
+                sh 'scp -r /var/lib/jenkins/workspace/Que_3/target/*.war ubuntu@13.234.33.170:/opt/apache-tomcat-9.0.87/webapps/'
       
             }
         }
